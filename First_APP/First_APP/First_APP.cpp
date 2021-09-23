@@ -36,8 +36,9 @@ int main() {
 	err = bind(server_socket, (LPSOCKADDR)&sin, sizeof(sin));
 	if (err < 0) cout << "Linking error!" << endl;
 	err = listen(server_socket, SOMAXCONN);
-
+	
 	SOCKADDR_IN from;
+
 	int fromlen = sizeof(from);
 	int server_socket1 = accept(server_socket, (struct sockaddr*)&from, &fromlen);
 	if (server_socket1 < 0) cout << "Error with accepting!" << endl;
